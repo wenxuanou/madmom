@@ -26,7 +26,7 @@ from __future__ import absolute_import, division, print_function
 # import the submodules
 from . import comb_filters, filters, signal, spectrogram, stft
 # import classes used often
-from .chroma import DeepChromaProcessor
+from .chroma import DeepChromaProcessor, CLPChromaProcessor
 from .signal import (FramedSignal, FramedSignalProcessor, Signal,
                      SignalProcessor, )
 from .spectrogram import (FilteredSpectrogram, FilteredSpectrogramProcessor,

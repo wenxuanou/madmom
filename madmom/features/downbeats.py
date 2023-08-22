@@ -58,7 +58,7 @@ class RNNDownBeatProcessor(SequentialProcessor):
 
     """
 
-    def __init__(self, fps=100, **kwargs):
+    def __init__(self, frame_rate=100, **kwargs):
         # pylint: disable=unused-argument
         from functools import partial
         from ..audio.signal import SignalProcessor, FramedSignalProcessor
@@ -76,7 +76,7 @@ class RNNDownBeatProcessor(SequentialProcessor):
         frame_sizes = [1024, 2048, 4096]
         num_bands = [3, 6, 12]
         for frame_size, num_bands in zip(frame_sizes, num_bands):
-            frames = FramedSignalProcessor(frame_size=frame_size, fps=fps)
+            frames = FramedSignalProcessor(frame_size=frame_size, fps=frame_rate)
             stft = ShortTimeFourierTransformProcessor()  # caching FFT window
             filt = FilteredSpectrogramProcessor(
                 num_bands=num_bands, fmin=30, fmax=17000, norm_filters=True)
